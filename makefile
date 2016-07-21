@@ -1,10 +1,10 @@
-CC=g++
+CC=gcc
 CFLAGS=-I
-DEPS = que2_header.h
+DEPS = dine.h
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< -pthread $(CFLAGS).
 
 
-que2make: que2_make.o que2_func.o
-	g++ -o que2_make que2_make.o que2_func.o -I.
+dinephil: dine2.o dine1.o
+	gcc -o $@ dine2.o dine1.o -pthread -I.
